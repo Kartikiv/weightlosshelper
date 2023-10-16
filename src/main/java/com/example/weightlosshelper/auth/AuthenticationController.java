@@ -24,7 +24,7 @@ public class AuthenticationController {
 
     @SneakyThrows
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> register(
+    public ResponseEntity<AuthenticationResponse> login(
             @RequestBody AuthenticationRequest authenticationRequest
 
     ) {
