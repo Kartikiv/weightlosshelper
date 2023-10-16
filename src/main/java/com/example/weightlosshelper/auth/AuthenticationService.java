@@ -31,7 +31,7 @@ public class AuthenticationService {
 
 
 
-    return  new AuthenticationResponse(jwtToken);
+    return  new AuthenticationResponse(user,jwtToken);
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest) throws Exception {
@@ -44,6 +44,6 @@ public class AuthenticationService {
 
         var user = userInformationRepository.findByUserName(authenticationRequest.getUserName()).orElseThrow(Exception::new);
         var jwtToken=jwtService.generateToken(user);
-        return  new AuthenticationResponse(jwtToken);
+        return  new AuthenticationResponse(user,jwtToken);
     }
 }
